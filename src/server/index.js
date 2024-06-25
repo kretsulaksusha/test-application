@@ -50,7 +50,6 @@ app.use('/documents', express.static(documentsDir));
 
 app.post('/upload-applications', upload.single('file'), (req, res) => {
     const data = req.body.data;
-    console.log(req.file);
 
     fs.writeFile('../data/applications.json', JSON.stringify(data, null, 2), (err) => {
         if (err) {
